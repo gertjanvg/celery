@@ -383,6 +383,6 @@ def get_exponential_backoff_interval(
     # Full jitter according to
     # https://www.awsarchitectureblog.com/2015/03/backoff.html
     if full_jitter:
-        countdown = random.randrange(countdown + 1)
+        countdown = random.random() * countdown
     # Adjust according to maximum wait time and account for negative values.
     return max(0, countdown)

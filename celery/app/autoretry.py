@@ -14,11 +14,11 @@ def add_autoretry_behaviour(task, **options):
     retry_kwargs = options.get(
         'retry_kwargs', getattr(task, 'retry_kwargs', {})
     )
-    retry_backoff = int(
+    retry_backoff = float(
         options.get('retry_backoff',
                     getattr(task, 'retry_backoff', False))
     )
-    retry_backoff_max = int(
+    retry_backoff_max = float(
         options.get('retry_backoff_max',
                     getattr(task, 'retry_backoff_max', 600))
     )
